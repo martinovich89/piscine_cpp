@@ -1,5 +1,6 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include <cstdlib>
 
 void Contact::set_first_name(std::string first_name) { first_name_ = first_name; }
 void Contact::set_last_name(std::string last_name) { last_name_ = last_name; }
@@ -13,6 +14,16 @@ std::string Contact::get_nick_name(void) { return (nick_name_); }
 std::string Contact::get_phone_number(void) { return (phone_number_); }
 std::string Contact::get_darkest_secret(void) { return (darkest_secret_); }
 size_t Contact::get_id(void) { return (id_); }
+
+static int	get_next_line(std::string &str)
+{
+	if (std::getline(std::cin, str).eof())
+	{
+		std::cerr << "CTRL+D" << std::endl;
+		std::exit(EXIT_SUCCESS);
+	}
+	return 0;
+}
 
 void	display_str(std::string to_print)
 {
@@ -61,19 +72,19 @@ void PhoneBook::add_contact(void)
 	std::string input;
 
 	std::cout << "Enter first name :\n";
-	std::getline(std::cin, input);
+	get_next_line(input);
 	Contactlist[amount % 8].set_first_name(input);
 	std::cout << "Enter last name :\n";
-	std::getline(std::cin, input);
+	get_next_line(input);
 	Contactlist[amount % 8].set_last_name(input);
 	std::cout << "Enter nickname name :\n";
-	std::getline(std::cin, input);
+	get_next_line(input);
 	Contactlist[amount % 8].set_nick_name(input);
 	std::cout << "Enter phone number :\n";
-	std::getline(std::cin, input);
+	get_next_line(input);
 	Contactlist[amount % 8].set_phone_number(input);
 	std::cout << "Enter darkest secret :\n";
-	std::getline(std::cin, input);
+	get_next_line(input);
 	Contactlist[amount % 8].set_darkest_secret(input);
 	Contactlist[amount % 8].set_id(amount % 8);
 	amount++;
@@ -131,14 +142,14 @@ int main(int argc, char **argv)
 		{
 			my_phonebook.show_contactlist();
 			std::cout << "Please enter the index of the contact you want to search\n";
-			std::getline(std::cin, index);
+			get_next_line(index);
 			while (my_phonebook.check_index_validity(index))
 			{
 				std::cout << "Please enter a valid index\n";
 				my_phonebook.show_contactlist();
 				if (my_phonebook.amount == 0)
 					break;
-				std::getline(std::cin, index);
+				get_next_line(index);
 			}
 			if (my_phonebook.amount != 0)
 				my_phonebook.Contactlist[index[0] - '1'].show_detailed_contact();
@@ -146,7 +157,7 @@ int main(int argc, char **argv)
 		input_cmd = "";
 		index = "";
 		std::cout << "Please type \"ADD\", \"SEARCH\", or \"EXIT\".\n";
-		std::getline(std::cin, input_cmd);
+		get_next_line(input_cmd);
 	}
 	return (0);
 }
