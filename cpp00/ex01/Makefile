@@ -4,7 +4,7 @@ INC				=	-I./
 
 SRC_PATH		=	./
 
-SRCS			=	phonebook.cpp
+SRCS			=	PhoneBook.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 

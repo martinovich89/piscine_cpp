@@ -62,34 +62,32 @@ void PhoneBook::add_contact(void)
 
 	std::cout << "Enter first name :\n";
 	std::getline(std::cin, input);
-	Contactlist[amount].set_first_name(input);
+	Contactlist[amount % 8].set_first_name(input);
 	std::cout << "Enter last name :\n";
 	std::getline(std::cin, input);
-	Contactlist[amount].set_last_name(input);
+	Contactlist[amount % 8].set_last_name(input);
 	std::cout << "Enter nickname name :\n";
 	std::getline(std::cin, input);
-	Contactlist[amount].set_nick_name(input);
+	Contactlist[amount % 8].set_nick_name(input);
 	std::cout << "Enter phone number :\n";
 	std::getline(std::cin, input);
-	Contactlist[amount].set_phone_number(input);
+	Contactlist[amount % 8].set_phone_number(input);
 	std::cout << "Enter darkest secret :\n";
 	std::getline(std::cin, input);
-	Contactlist[amount].set_darkest_secret(input);
-	Contactlist[amount].set_id(amount);
+	Contactlist[amount % 8].set_darkest_secret(input);
+	Contactlist[amount % 8].set_id(amount % 8);
 	amount++;
 }
 
 void PhoneBook::new_contact(void)
 {
-	if (amount < MAX_CONTACTS)
-		add_contact();
-	else
-		std::cout << "Can't add any new contact. Phonebook is full.\n";
+	add_contact();
 }
 
 void PhoneBook::show_contactlist()
 {
-	for (size_t i = 0; i < amount; i++)
+	size_t limit = (amount < 8) ? amount : MAX_CONTACTS;
+	for (size_t i = 0; i < limit; i++)
 	{
 		Contactlist[i].show_contact();
 	}
@@ -138,9 +136,12 @@ int main(int argc, char **argv)
 			{
 				std::cout << "Please enter a valid index\n";
 				my_phonebook.show_contactlist();
+				if (my_phonebook.amount == 0)
+					break;
 				std::getline(std::cin, index);
 			}
-			my_phonebook.Contactlist[index[0] - '1'].show_detailed_contact();
+			if (my_phonebook.amount != 0)
+				my_phonebook.Contactlist[index[0] - '1'].show_detailed_contact();
 		}
 		input_cmd = "";
 		index = "";
