@@ -1,9 +1,0 @@
-I needed to convert fixed point into float / int.
-
-Here is a resource I used to create my converter :
-https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/
-
-I also needed to overload the "<<" operator.
-
-This page helped me doing so and understanding what's going on in the code :
-https://www.developpez.net/forums/d1460311/c-cpp/cpp/langage/surcharge-d-operateur-ostream/
