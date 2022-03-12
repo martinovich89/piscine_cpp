@@ -6,7 +6,7 @@ SRCS			=	./megaphone.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 
-CC				=	clang++
+CC				=	c++
 
 CFLAGS			=	-Wall -Wextra -Werror -fsanitize=address -g3
 

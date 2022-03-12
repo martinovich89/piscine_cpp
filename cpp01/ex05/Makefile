@@ -8,7 +8,7 @@ SRCS			=	Karen.cpp  main.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 
-CC				=	clang++
+CC				=	c++
 
 CFLAGS			=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
