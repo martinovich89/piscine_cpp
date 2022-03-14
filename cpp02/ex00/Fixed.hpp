@@ -18,5 +18,5 @@ class Fixed
 	Fixed &operator=(const Fixed &bp);
 
 	int getRawBits(void) const;
-	void setRawBits(int const val);
+	void setRawBits(int const raw);
 };

@@ -1,21 +1,23 @@
 #include "Point.hpp"
 
-static Fixed sign (const Point p1, const Point p2, const Point p3)
+static Fixed side (const Point a, const Point b, const Point c)
 {
-    return (p1.get_x() - p3.get_x()) * (p2.get_y() - p3.get_y()) - (p2.get_x() - p3.get_x()) * (p1.get_y() - p3.get_y());
+    return (a.get_x() - c.get_x()) * (b.get_y() - c.get_y()) - (b.get_x() - c.get_x()) * (a.get_y() - c.get_y());
 }
 
 bool bsp(const Point a, const Point b, const Point c, const Point point)
 {
 	Fixed d1, d2, d3;
-    bool has_neg, has_pos;
+    bool left, right;
 
-    d1 = sign(point, a, b);
-    d2 = sign(point, b, c);
-    d3 = sign(point, c, a);
+    d1 = side(point, a, b);
+    d2 = side(point, b, c);
+    d3 = side(point, c, a);
 
-    has_neg = (d1 < 0) || (d2 < 0) || (d3 < 0);
-    has_pos = (d1 > 0) || (d2 > 0) || (d3 > 0);
+    left = (d1 < 0) || (d2 < 0) || (d3 < 0);
+    right = (d1 > 0) || (d2 > 0) || (d3 > 0);
 
-    return !(has_neg && has_pos);
+    if (d1 == 0 || d2 == 0 || d3 == 0)
+        return (false);
+    return !(left && right);
 }

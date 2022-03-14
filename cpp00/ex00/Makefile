@@ -8,12 +8,12 @@ OBJS			=	$(SRCS:.cpp=.o)
 
 CC				=	c++
 
-CFLAGS			=	-Wall -Wextra -Werror -fsanitize=address -g3
+CXXFLAGS			=	-Wall -Wextra -Werror -fsanitize=address -g3
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-		$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+		$(CC) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean :
 		$(RM) $(OBJS)

@@ -10,15 +10,15 @@ OBJS			=	$(SRCS:.cpp=.o)
 
 CC				=	c++
 
-CFLAGS			=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CXXFLAGS			=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-		$(CC) $(CFLAGS) $(SRCS) $(INC) -o $(NAME)
+		$(CC) $(CXXFLAGS) $(SRCS) $(INC) -o $(NAME)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) $(INC) -o $@ -c $<
+	$(CC) $(CXXFLAGS) $(INC) -o $@ -c $<
 
 clean :
 		$(RM) $(OBJS)

@@ -26,8 +26,9 @@ Fixed	&Fixed::operator=(const Fixed &bp)
 	return (*this);
 }
 
-void	Fixed::setRawBits(int nb)
+void	Fixed::setRawBits(int const nb)
 {
+	std::cout << "setRawBits member function called" << std::endl;
 	this->n = nb;
 }
 

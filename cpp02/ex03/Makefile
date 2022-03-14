@@ -8,17 +8,17 @@ SRCS			=	main.cpp Fixed.cpp Point.cpp Bsp.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 
-CC				=	c++
+CXX				=	c++
 
-CFLAGS			=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CXXFLAGS			=	-Wall -Wextra -Werror -std=c++98 #-sanitize=address -g3
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-		$(CC) $(CFLAGS) $(SRCS) $(INC) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $(SRCS) $(INC) -o $(NAME)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) $(INC) -o $@ -c $<
+	$(CXX) $(CXXFLAGS) $(INC) -o $@ -c $<
 
 clean :
 		$(RM) $(OBJS)

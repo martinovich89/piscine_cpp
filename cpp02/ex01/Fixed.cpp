@@ -51,6 +51,7 @@ std::ostream	&operator <<(std::ostream &out, const Fixed &x) {
 
 void	Fixed::setRawBits(int nb)
 {
+	std::cout << "setRawBits member function called" << std::endl;
 	this->n = nb;
 }
 
