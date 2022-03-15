@@ -33,8 +33,7 @@ int main(void)
 	std::cout << std::endl;
 	JeanJacques.beRepaired(3);
 	std::cout << std::endl;
-/*	std::cout << "Fake " << JeanJacquesClone.get_name() << " says : \"ImmA FirinG Ma LaseR !!\", and attacks Jean-Jacques, causing 452 points of damage!" << std::endl;
-	JeanJacques.takeDamage(452);*/
+	JeanPierre.guardGate();
 	JeanPierre.attack("JeanJacques");
 	JeanJacques.takeDamage(JeanPierre.get_ad());
 	std::cout << std::endl;

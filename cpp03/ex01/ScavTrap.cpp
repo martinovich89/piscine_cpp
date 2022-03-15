@@ -47,7 +47,7 @@ void	ScavTrap::attack(std::string target)
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout << "ScavTrap " << this->name << " entered in \"Gate Keeper\" mode." << std::endl;
+	std::cout << "ScavTrap " << this->name << " has entered \"Gate Keeper\" mode." << std::endl;
 }
 
 std::string ClapTrap::get_name()

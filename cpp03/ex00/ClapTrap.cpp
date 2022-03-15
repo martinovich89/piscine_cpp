@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(const ClapTrap &other) : name(other.name), hp(other.hp), ep(o
 
 ClapTrap::ClapTrap(std::string new_name) : name(new_name), hp(10), ep(10), ad(0)
 {
-	std::cout << "Created ClapTrap " << name << std::endl;
+	std::cout << "Created ClapTrap " << this->name << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &other)
@@ -45,11 +45,11 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (amount > (uint)this->hp)
-		amount = this->hp;
 	if (this->hp > 0)
 	{
 		std::cout << this->name << " takes " << amount << " damage !\n";
+		if (amount > (uint)this->hp)
+			amount = this->hp;
 		this->hp -= amount;
 		if (this->hp == 0)
 			std::cout << "ClapTrap " << this->name << " is K.O !" << std::endl;
