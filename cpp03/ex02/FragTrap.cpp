@@ -27,6 +27,9 @@ FragTrap	&FragTrap::operator=(const FragTrap &other)
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "A wild FragTrap appears ! Serial number : " << this->name << std::endl;
+	this->hp = 100;
+	this->ep = 100;
+	this->ad = 30;
 }
 
 void	FragTrap::attack(std::string target)
