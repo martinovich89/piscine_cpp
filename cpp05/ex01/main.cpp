@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
@@ -35,10 +36,6 @@ int main(void)
 		std::cout << "JeanReptilien grade : " << JeanReptilien.getGrade() << std::endl;
 
 		std::cout << std::endl;
-
-		JeanAttali.upgrade();
-		std::cout << "JeanAttali promoted";
-		
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
@@ -51,29 +48,18 @@ int main(void)
 
 	try
 	{
-		Bureaucrat JeanDentsTropLongues("Jean-Dent-Trop-Longues", 0);
-	}
-	catch(Bureaucrat::GradeTooHighException &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch(Bureaucrat::GradeTooLowException &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+		Form a27;
+		Form b19;
+		Form c42;
 
-	try
-	{
-		Bureaucrat JeanCancrelas("Jean-Cancrelas", 151);
+		
 	}
-	catch(Bureaucrat::GradeTooHighException &e)
+	catch(Form::GradeTooHighException &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch(Bureaucrat::GradeTooLowException &e)
+	catch(Form::GradeTooLowException &e)
 	{
 		std::cerr << e.what() << std::endl;
-	}
-	
-	
+	}	
 }
