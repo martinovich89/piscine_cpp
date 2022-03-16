@@ -51,6 +51,13 @@ void	Bureaucrat::downgrade()
 	_grade++;
 }
 
+void	Bureaucrat::signForm(Form &someForm)
+{
+	if (_grade > someForm.getSignGrade())
+		throw Form::GradeTooLowException();
+	someForm.beSigned();
+}
+
 std::string	Bureaucrat::getName(void) const
 {
 	return (_name);
@@ -60,8 +67,6 @@ int Bureaucrat::getGrade(void) const
 {
 	return (_grade);
 }
-
-
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw()
 {

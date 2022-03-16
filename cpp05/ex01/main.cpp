@@ -3,14 +3,13 @@
 
 int main(void)
 {
+	Bureaucrat JeanLaposte;
+	Bureaucrat JeanBCE("Jean-BCE", 42);
+	Bureaucrat JeanAttali("Jean-Attali", 1);
+	Bureaucrat JeanReptilien(JeanAttali);
+
 	try
 	{
-		Bureaucrat JeanLaposte;
-		Bureaucrat JeanBCE("Jean-BCE", 42);
-		Bureaucrat JeanAttali("Jean-Attali", 1);
-		Bureaucrat JeanReptilien(JeanAttali);
-
-
 		std::cout << "JeanLaposte name : " << JeanLaposte.getName() << std::endl;
 		std::cout << "JeanLaposte grade : " << JeanLaposte.getGrade() << std::endl;
 		JeanLaposte.upgrade();
@@ -46,13 +45,18 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
+	Form a27;
+	Form b19("Mecanisme Europeen de Stabilite", 0, 43, 42);
+	Form c42("Rachat de Activision-Blizzard", 0, 1, 1);
+	Form d19(b19);
+
 	try
 	{
-		Form a27;
-		Form b19;
-		Form c42;
+		a27.beSigned(JeanLaposte);
+		b19.beSigned(JeanBCE);
+		c42.beSigned(JeanReptilien);
 
-		
+		b19.beSigned(JeanBCE);
 	}
 	catch(Form::GradeTooHighException &e)
 	{
