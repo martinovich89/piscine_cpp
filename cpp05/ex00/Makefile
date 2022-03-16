@@ -1,10 +1,10 @@
-NAME			=	fixed
+NAME			=	Bureaucrat
 
 INC				=	-I./
 
 SRC_PATH		=	./
 
-SRCS			=	main.cpp Fixed.cpp
+SRCS			=	main.cpp Bureaucrat.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 
