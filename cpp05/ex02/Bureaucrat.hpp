@@ -1,8 +1,7 @@
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#pragma once
 
-# include "Form.hpp"
-# include <iostream>
+#include "Form.hpp"
+#include <iostream>
 
 class Form;
 
@@ -39,5 +38,3 @@ class Bureaucrat
 			virtual const char *what() const throw();
 	};
 };
-
-#endif

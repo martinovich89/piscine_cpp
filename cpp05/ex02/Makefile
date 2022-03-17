@@ -4,7 +4,7 @@ INC				=	-I./
 
 SRC_PATH		=	./
 
-SRCS			=	main.cpp Bureaucrat.cpp Form.cpp
+SRCS			=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonFrom.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 

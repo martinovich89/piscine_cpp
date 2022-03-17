@@ -1,8 +1,7 @@
-#ifndef FORM_HPP
-# define FORM_HPP
+#pragma once
 
-# include "Bureaucrat.hpp"
-# include <iostream>
+#include "Bureaucrat.hpp"
+#include <iostream>
 
 class Bureaucrat;
 
@@ -18,7 +17,7 @@ class Form
 	public :
 
 	Form();
-	~Form();
+	virtual ~Form() = 0;
 	Form(const Form &other);
 	Form &operator=(const Form &other);
 
@@ -46,5 +45,3 @@ class Form
 };
 
 std::ostream	&operator<<(std::ostream &out, Form &someForm);
-
-#endif
