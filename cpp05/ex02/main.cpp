@@ -4,7 +4,7 @@
 #include "PresidentialPardonForm.hpp"
 
 class ShrubberyCreationForm;
-class RobotmyRequestForm;
+class RobotomyRequestForm;
 class PresidentialPardonForm;
 
 int main(void)
@@ -51,18 +51,12 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 	
-	try
-	{
-		ShrubberyCreationForm	a27;
-		RobotmyRequestForm		b19;
-		PresidentialPardonForm	c42;
-	}
-	catch (Form::GradeTooHighException &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch (Form::GradeTooLowException &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	ShrubberyCreationForm	a27;
+	RobotomyRequestForm		b19("xXDarkSasuke98Xx");
+	PresidentialPardonForm	c42("SomeTarget");
+	PresidentialPardonForm	d42(c42);
+
+	JeanBCE.signForm(c42);
+	JeanAttali.signForm(d42);
+
 }

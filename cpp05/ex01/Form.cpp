@@ -16,7 +16,7 @@ Form::~Form()
 
 Form::Form(const Form &other)
 :	_name(other._name),
-	_signed(other._signed),
+	_signed(0),
 	_signGrade(other._signGrade),
 	_execGrade(other._execGrade)
 {
@@ -30,10 +30,10 @@ Form	&Form::operator=(const Form &other)
 }
 
 Form::Form(
-	std::string name, bool sign,
+	std::string name,
 	int signGrade, int execGrade
 ) :	_name(name),
-	_signed(sign),
+	_signed(0),
 	_signGrade(signGrade),
 	_execGrade(execGrade)
 {
@@ -45,7 +45,6 @@ Form::Form(
 
 void	Form::beSigned(Bureaucrat someBureaucrat)
 {
-	std::cout << someBureaucrat.getGrade() << " | " << _signGrade << std::endl;
 	if (someBureaucrat.getGrade() <= _signGrade)
 		_signed = 1;
 	else

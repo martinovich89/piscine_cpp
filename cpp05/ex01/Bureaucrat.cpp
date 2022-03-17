@@ -53,9 +53,16 @@ void	Bureaucrat::downgrade()
 
 void	Bureaucrat::signForm(Form &someForm)
 {
-	if (_grade > someForm.getSignGrade())
-		throw Form::GradeTooLowException();
-	someForm.beSigned(*this);
+	try
+	{
+		someForm.beSigned(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << _name << " couldn't sign " << someForm.getName() << " because " << e.what() << std::endl;
+		return ;
+	}
+	std::cout << _name << " signed " << someForm.getName() << std::endl;
 }
 
 std::string	Bureaucrat::getName(void) const

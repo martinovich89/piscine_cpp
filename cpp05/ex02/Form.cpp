@@ -11,12 +11,11 @@ Form::Form()
 
 Form::~Form()
 {
-	std::cout << "Destroyed " << _name << std::endl;
 }
 
 Form::Form(const Form &other)
 :	_name(other._name),
-	_signed(other._signed),
+	_signed(0),
 	_signGrade(other._signGrade),
 	_execGrade(other._execGrade)
 {
@@ -29,11 +28,9 @@ Form	&Form::operator=(const Form &other)
 	return (*this);
 }
 
-Form::Form(
-	std::string name, bool sign,
-	int signGrade, int execGrade
-) :	_name(name),
-	_signed(sign),
+Form::Form(std::string name, int signGrade, int execGrade)
+:	_name(name),
+	_signed(0),
 	_signGrade(signGrade),
 	_execGrade(execGrade)
 {
@@ -50,6 +47,11 @@ void	Form::beSigned(Bureaucrat someBureaucrat)
 		_signed = 1;
 	else
 		throw Form::GradeTooLowException();
+}
+
+void	Form::execute(Bureaucrat const &executor)
+{
+	
 }
 
 const char *Form::GradeTooHighException::what() const throw()

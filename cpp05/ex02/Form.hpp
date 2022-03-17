@@ -21,9 +21,10 @@ class Form
 	Form(const Form &other);
 	Form &operator=(const Form &other);
 
-	Form(std::string name, bool sign, int signGrade, int execGrade);
+	Form(std::string name, int signGrade, int execGrade);
 
 	void beSigned(Bureaucrat someBureaucrat);
+	void execute(Bureaucrat const &executor);
 
 	class GradeTooHighException : public std::exception
 	{

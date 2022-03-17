@@ -6,18 +6,22 @@
 
 class Form;
 
-class RobotmyRequestForm : public Form
+class RobotomyRequestForm : public Form
 {
 	private:
 
+	std::string _target;
 	void	beExecuted() const;
 
 	public:
 
-	RobotmyRequestForm();
-	RobotmyRequestForm(const RobotmyRequestForm &other);
-	virtual ~RobotmyRequestForm();
-	RobotmyRequestForm &operator=(const RobotmyRequestForm& other);
+	RobotomyRequestForm();
+	virtual ~RobotomyRequestForm();
+	RobotomyRequestForm(const RobotomyRequestForm &other);
+	RobotomyRequestForm &operator=(const RobotomyRequestForm& other);
 
-	RobotmyRequestForm(const std::string &name);
+	RobotomyRequestForm(const std::string &target);
+	execute(Bureaucrat const & executor)
+
+	std::string getTarget() const;
 };
