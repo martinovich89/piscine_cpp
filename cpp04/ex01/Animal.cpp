@@ -19,11 +19,12 @@ Animal::Animal(Animal const &other)
 	return;
 }
 
-Animal &Animal::operator=(Animal const &other)
+Animal &Animal::operator=(const Animal &other)
 {
 	std::cout << "Passing through operator=() overload" << std::endl;
-	this->type = other.type;
-	*(get_brain()) = *(other.get_brain());
+    if ((this->type == "Cat" || this->type == "Dog") && (other.type == "Cat" || other.type == "Dog"))
+        *get_brain() = *other.get_brain();
+    this->type = other.type;
 	return *this;
 }
 

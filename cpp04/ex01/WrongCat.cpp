@@ -13,7 +13,7 @@ WrongCat::~WrongCat(void)
 	return;
 }
 
-WrongCat::WrongCat(const WrongCat &other)
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other)
 {
 	std::cout << "Passing through WrongCat copy constructor" << std::endl;
 	*this = other;

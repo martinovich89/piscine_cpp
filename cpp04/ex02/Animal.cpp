@@ -32,7 +32,7 @@ std::string	Animal::getType(void) const
 	return (this->type);
 }
 
-Brain	*Animal::get_brain(void) const
+Brain *Animal::get_brain(void) const
 {
 	return (NULL);
 }

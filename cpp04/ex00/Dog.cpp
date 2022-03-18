@@ -13,7 +13,7 @@ Dog::~Dog(void)
 	return;
 }
 
-Dog::Dog(Dog const &other)
+Dog::Dog(Dog const &other) : Animal(other)
 {
 	std::cout << "Passing through Dog copy constructor" << std::endl;
 	*this = other;

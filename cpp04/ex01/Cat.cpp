@@ -15,7 +15,7 @@ Cat::~Cat(void)
 	return;
 }
 
-Cat::Cat(const Cat &other)
+Cat::Cat(const Cat &other) : Animal(other)
 {
 	std::cout << "Passing through Cat copy constructor" << std::endl;
 	this->brain = new Brain();

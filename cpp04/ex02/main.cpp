@@ -11,10 +11,10 @@ int	main( void )
 
 	//Animal hedgehog;
 
-	Dog a;
+/*	Dog a;
 	std::cout << "----------------" << std::endl;
 	Dog b(a);
-	std::cout << "----------------" << std::endl;
+	std::cout << "----------------" << std::endl;*/
 
 	for (int i = 0; i < 4; i++)
 	{
