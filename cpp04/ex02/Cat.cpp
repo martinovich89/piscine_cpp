@@ -10,14 +10,15 @@ Cat::Cat(void)
 
 Cat::~Cat(void)
 {
-	delete this->brain;
 	std::cout << "Passing through Cat destructor" << std::endl;
+	delete this->brain;
 	return;
 }
 
 Cat::Cat(const Cat &other)
 {
 	std::cout << "Passing through Cat copy constructor" << std::endl;
+	this->brain = new Brain();
 	*this = other;
 	return;
 }
@@ -25,8 +26,8 @@ Cat::Cat(const Cat &other)
 Cat	&Cat::operator=(const Cat &other)
 {
 	std::cout << "Passing through Cat operator=() overload" << std::endl;
-	this->type = other.getType();
-	*(this->brain) = *(other.get_brain());
+	this->type = other.type;
+	*(this->brain) = *(other.brain);
 	return (*this);
 }
 

@@ -8,17 +8,17 @@ SRCS			=	main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 
-CC				=	c++
+CXX				=	c++
 
 CXXFLAGS			=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-		$(CC) $(CXXFLAGS) $(SRCS) $(INC) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $(SRCS) $(INC) -o $(NAME)
 
 %.o : %.cpp
-	$(CC) $(CXXFLAGS) $(INC) -o $@ -c $<
+	$(CXX) $(CXXFLAGS) $(INC) -o $@ -c $<
 
 clean :
 		$(RM) $(OBJS)

@@ -10,14 +10,15 @@ Dog::Dog(void)
 
 Dog::~Dog(void)
 {
-	delete this->brain;
 	std::cout << "Passing through Dog destructor" << std::endl;
+	delete this->brain;
 	return;
 }
 
 Dog::Dog(Dog const &other)
 {
 	std::cout << "Passing through Dog copy constructor" << std::endl;
+	this->brain = new Brain();
 	*this = other;
 	return;
 }
@@ -25,8 +26,8 @@ Dog::Dog(Dog const &other)
 Dog	&Dog::operator=(const Dog &other)
 {
 	std::cout << "Passing through Dog operator=() overload" << std::endl;
-	this->type = other.getType();
-	*(this->brain) = *(other.get_brain());
+	this->type = other.type;
+	*(this->brain) = *(other.brain);
 	return (*this);
 }
 

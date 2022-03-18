@@ -1,5 +1,7 @@
 NAME			=	animal
 
+HEADERS			=	Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
+
 INC				=	-I./
 
 SRC_PATH		=	./
@@ -8,17 +10,17 @@ SRCS			=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 
-CC				=	c++
+CXX				=	c++
 
 CXXFLAGS			=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-		$(CC) $(CXXFLAGS) $(SRCS) $(INC) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $(SRCS) $(INC) -o $(NAME)
 
-%.o : %.cpp
-	$(CC) $(CXXFLAGS) $(INC) -o $@ -c $<
+%.o : %.cpp $(HEADERS) Makefile
+	$(CXX) $(CXXFLAGS) $(INC) -o $@ -c $<
 
 clean :
 		$(RM) $(OBJS)

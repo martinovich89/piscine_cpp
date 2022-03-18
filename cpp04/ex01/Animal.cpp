@@ -22,8 +22,8 @@ Animal::Animal(Animal const &other)
 Animal &Animal::operator=(Animal const &other)
 {
 	std::cout << "Passing through operator=() overload" << std::endl;
-	this->type = other.getType();
-	*(this->get_brain()) = *(other.get_brain());
+	this->type = other.type;
+	*(get_brain()) = *(other.get_brain());
 	return *this;
 }
 
@@ -39,5 +39,5 @@ std::string	Animal::getType(void) const
 
 Brain	*Animal::get_brain(void) const
 {
-	return (0);
+	return (NULL);
 }

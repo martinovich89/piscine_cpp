@@ -1,6 +1,6 @@
 #include "Brain.hpp"
 
-Brain::Brain()
+Brain::Brain() : ideas()
 {
 	std::cout << "Passing through Brain constructor" << std::endl;
 }
@@ -13,7 +13,7 @@ Brain::~Brain()
 Brain::Brain(const Brain &other)
 {
 	*this = other;
-	std::cout << "Passing through Brain copy destrucor" << std::endl;
+	std::cout << "Passing through Brain copy constructor" << std::endl;
 }
 
 Brain	&Brain::operator=(const Brain &other)

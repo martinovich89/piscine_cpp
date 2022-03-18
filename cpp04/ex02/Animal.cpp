@@ -34,5 +34,5 @@ std::string	Animal::getType(void) const
 
 Brain	*Animal::get_brain(void) const
 {
-	return (0);
+	return (NULL);
 }

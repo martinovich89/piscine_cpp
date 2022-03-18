@@ -9,6 +9,13 @@ int	main( void )
 	Brain *cat_brain;
 	Brain *dog_brain;
 
+	//Animal hedgehog;
+
+	Dog a;
+	std::cout << "----------------" << std::endl;
+	Dog b(a);
+	std::cout << "----------------" << std::endl;
+
 	for (int i = 0; i < 4; i++)
 	{
 		if (i < 2)

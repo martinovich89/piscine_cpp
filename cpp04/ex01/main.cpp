@@ -9,6 +9,13 @@ int	main( void )
 	Brain *cat_brain;
 	Brain *dog_brain;
 
+//	Animal hedgehog;
+
+	Dog a;
+	std::cout << "----------------" << std::endl;
+	Dog b(a);
+	std::cout << "----------------" << std::endl;
+
 	for (int i = 0; i < 4; i++)
 	{
 		if (i < 2)
@@ -22,8 +29,8 @@ int	main( void )
 			tab[i]->makeSound();
 		}
 	}
-	cat_brain = tab[0]->get_brain();
-	dog_brain = tab[2]->get_brain();
+	dog_brain = tab[0]->get_brain();
+	cat_brain = tab[2]->get_brain();
 	cat_brain->ideas[0] = dog_brain->ideas[0] = "Kibbles, let's GO !!";
 	cat_brain->ideas[1] = dog_brain->ideas[1] = "I will rule them all";
 	cat_brain->ideas[2] = dog_brain->ideas[2] = "I swear, it's not me for the slippers !";
@@ -43,6 +50,12 @@ int	main( void )
 	delete tab[1];
 	delete tab[2];
 	delete tab[3];
+
+	std::cout << "===================================" << std::endl;
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;
+	delete i;
 
 	return (0);
 }

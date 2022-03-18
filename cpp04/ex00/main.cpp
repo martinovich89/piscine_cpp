@@ -17,5 +17,10 @@ int main()
 	delete meta;
 	delete j;
 	delete i;
-	return 0;
+
+	const WrongAnimal* a = new WrongCat();
+	std::cout << a->getType() << " " << std::endl;
+	a->makeSound();
+	delete a;
+	return (0);
 }
