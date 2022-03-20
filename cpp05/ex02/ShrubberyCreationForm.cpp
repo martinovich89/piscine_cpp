@@ -11,11 +11,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
-:	Form(
-		other.getName(),
-		other.getSignGrade(),
-		other.getExecGrade()
-	),
+:	Form(other),
 	_target(other.getTarget())
 {
 }
@@ -29,12 +25,38 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("ShrubberyCreationForm", 145, 137), _target(target)
 {
-	//Créé un fichier <target>_shrubbery dans le répertoire courant, et écrit des arbres ASCII à l’intérieur.
 }
 
-void	ShrubberyCreationForm::execute(Bureaucrat const &executor)
+void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
+	std::ofstream		out;
+	std::string const	file = _target + "_shrubbery";
 
+	//Créé un fichier <target>_shrubbery dans le répertoire courant, et écrit des arbres ASCII à l’intérieur.
+	if (!getSign())
+		throw NotSignedException();
+	if (executor.getGrade() > getExecGrade())
+		throw GradeTooLowException();
+	
+	out.open(file.c_str(), std::ofstream::trunc | std::ofstream::out);
+	if (!out.is_open())
+	{
+		std::cerr << "Error : failed to open file" << std::endl;
+		return ;
+	}
+	out <<	"       /\\           /\\        " << std::endl
+		<<	"      /||\\         /||\\ /\\   " << std::endl
+		<<	"      /||\\         /||\\/||\\  " << std::endl
+		<<	"     //||\\\\       //||\\/||\\  " << std::endl
+		<<	"     //||\\\\       //||//||\\\\ " << std::endl
+		<<	"    ///||\\\\\\     ///||//||\\\\ " << std::endl
+		<<	"       ||           |///||\\\\\\" << std::endl
+		<<	"                        ||   " << std::endl;
+
+
+
+	out.close();
+	
 }
 
 std::string		ShrubberyCreationForm::getTarget() const

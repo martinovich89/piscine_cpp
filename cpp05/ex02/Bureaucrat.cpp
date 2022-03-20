@@ -17,7 +17,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(oth
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &other)
 {
-	_name = other._name;
 	_grade = other._grade;
 	return (*this);
 }
@@ -57,7 +56,7 @@ void	Bureaucrat::signForm(Form &someForm)
 	{
 		someForm.beSigned(*this);
 	}
-	catch(const std::exception& e)
+	catch(const std::exception &e)
 	{
 		std::cout << _name << " couldn't sign " << someForm.getName() << " because " << e.what() << std::endl;
 		return ;
@@ -65,9 +64,17 @@ void	Bureaucrat::signForm(Form &someForm)
 	std::cout << _name << " signed " << someForm.getName() << std::endl;
 }
 
-void	executeForm(Form const &form)
+void	Bureaucrat::executeForm(Form const &form)
 {
-
+	try
+	{
+		form.execute(*this);
+	}
+	catch(const std::exception &e)
+	{
+		std::cout << _name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+		return ;
+	}
 }
 
 std::string	Bureaucrat::getName(void) const

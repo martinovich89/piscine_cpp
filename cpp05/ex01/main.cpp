@@ -9,31 +9,22 @@ int main(void)
 
 	try
 	{
-		std::cout << "JeanLaposte name : " << JeanLaposte.getName() << std::endl;
-		std::cout << "JeanLaposte grade : " << JeanLaposte.getGrade() << std::endl;
+		std::cout << JeanLaposte;
 		JeanLaposte.upgrade();
 		std::cout << "JeanLaposte promoted" << std::endl;
-		std::cout << "JeanLaposte grade : " << JeanLaposte.getGrade() << std::endl;
+		std::cout << JeanLaposte << std::endl;
 
-		std::cout << std::endl;
-
-		std::cout << "JeanBCE name : " << JeanBCE.getName() << std::endl;
-		std::cout << "JeanBCE grade : " << JeanBCE.getGrade() << std::endl;
+		std::cout << JeanBCE;
 		JeanBCE.downgrade();
 		std::cout << "JeanBCE dismissed" << std::endl;
-		std::cout << "JeanBCE grade : " << JeanBCE.getGrade() << std::endl;
+		std::cout << JeanBCE << std::endl;
 
-		std::cout << std::endl;
+		std::cout << JeanReptilien;
 
-		std::cout << "JeanAttali name : " << JeanAttali.getName() << std::endl;
-		std::cout << "JeanAttali grade : " << JeanAttali.getGrade() << std::endl;
-
-		std::cout << std::endl;
-		
-		std::cout << "JeanReptilien name : " << JeanReptilien.getName() << std::endl;
-		std::cout << "JeanReptilien grade : " << JeanReptilien.getGrade() << std::endl;
-
-		std::cout << std::endl;
+		std::cout << JeanAttali;
+		JeanAttali.upgrade();
+		std::cout << "JeanAttali dismissed" << std::endl;
+		std::cout << JeanAttali << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
@@ -43,6 +34,8 @@ int main(void)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+
+	std::cout << std::endl;
 
 	Form a27;
 	Form b19("Mecanisme Europeen de Stabilite", 43, 42);
@@ -61,6 +54,7 @@ int main(void)
 	std::cout << c42 << std::endl;
 
 	JeanBCE.downgrade();
+	std::cout << "JeanBCE dismissed" << std::endl;
 	JeanBCE.signForm(d19);
 	std::cout << d19 << std::endl;
 

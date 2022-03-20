@@ -1,5 +1,7 @@
 NAME			=	Form
 
+HEADERS			=	Bureaucrat.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+
 INC				=	-I./
 
 SRC_PATH		=	./
@@ -17,7 +19,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 		$(CXX) $(CXXFLAGS) $(SRCS) $(INC) -o $(NAME)
 
-%.o : %.cpp
+%.o : %.cpp $(HEADERS) Makefile
 	$(CXX) $(CXXFLAGS) $(INC) -o $@ -c $<
 
 clean :

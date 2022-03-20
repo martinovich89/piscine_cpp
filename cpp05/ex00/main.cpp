@@ -6,38 +6,29 @@ int main(void)
 	{
 		Bureaucrat JeanLaposte;
 		Bureaucrat JeanBCE("Jean-BCE", 42);
+		Bureaucrat JeanReptilien(JeanLaposte);
 		Bureaucrat JeanAttali("Jean-Attali", 1);
-		Bureaucrat JeanReptilien(JeanAttali);
 
 
-		std::cout << "JeanLaposte name : " << JeanLaposte.getName() << std::endl;
-		std::cout << "JeanLaposte grade : " << JeanLaposte.getGrade() << std::endl;
+		std::cout << JeanLaposte;
 		JeanLaposte.upgrade();
 		std::cout << "JeanLaposte promoted" << std::endl;
-		std::cout << "JeanLaposte grade : " << JeanLaposte.getGrade() << std::endl;
+		std::cout << JeanLaposte << std::endl;
 
-		std::cout << std::endl;
-
-		std::cout << "JeanBCE name : " << JeanBCE.getName() << std::endl;
-		std::cout << "JeanBCE grade : " << JeanBCE.getGrade() << std::endl;
+		std::cout << JeanBCE;
 		JeanBCE.downgrade();
 		std::cout << "JeanBCE dismissed" << std::endl;
-		std::cout << "JeanBCE grade : " << JeanBCE.getGrade() << std::endl;
+		std::cout << JeanBCE << std::endl;
 
-		std::cout << std::endl;
-
-		std::cout << "JeanAttali name : " << JeanAttali.getName() << std::endl;
-		std::cout << "JeanAttali grade : " << JeanAttali.getGrade() << std::endl;
-
-		std::cout << std::endl;
 		
-		std::cout << "JeanReptilien name : " << JeanReptilien.getName() << std::endl;
-		std::cout << "JeanReptilien grade : " << JeanReptilien.getGrade() << std::endl;
+		std::cout << JeanReptilien << std::endl;
+		JeanReptilien = JeanAttali;
+		std::cout << JeanReptilien << std::endl;
 
-		std::cout << std::endl;
-
+		std::cout << JeanAttali;
 		JeanAttali.upgrade();
 		std::cout << "JeanAttali promoted";
+		std::cout << JeanAttali << std::endl;
 		
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
@@ -64,7 +55,7 @@ int main(void)
 
 	try
 	{
-		Bureaucrat JeanCancrelas("Jean-Cancrelas", 151);
+		Bureaucrat JeanCancre("Jean-Cancre", 151);
 	}
 	catch(Bureaucrat::GradeTooHighException &e)
 	{

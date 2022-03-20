@@ -17,7 +17,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(oth
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &other)
 {
-	_name = other._name;
 	_grade = other._grade;
 	return (*this);
 }
@@ -71,4 +70,10 @@ const char	*Bureaucrat::GradeTooHighException::what() const throw()
 const char	*Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low");
+}
+
+std::ostream	&operator<<(std::ostream &out, Bureaucrat &toPrint)
+{
+	out << "Name : " << toPrint.getName() << " | Grade : " << toPrint.getGrade() << std::endl;
+	return (out);
 }

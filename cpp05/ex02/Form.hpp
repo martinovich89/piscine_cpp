@@ -2,6 +2,8 @@
 
 #include "Bureaucrat.hpp"
 #include <iostream>
+#include <ctime>
+#include <fstream>
 
 class Bureaucrat;
 
@@ -23,8 +25,8 @@ class Form
 
 	Form(std::string name, int signGrade, int execGrade);
 
-	void beSigned(Bureaucrat someBureaucrat);
-	void execute(Bureaucrat const &executor);
+	virtual void beSigned(Bureaucrat someBureaucrat);
+	virtual void execute(Bureaucrat const &executor) const = 0;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -33,6 +35,12 @@ class Form
 	};
 
 	class GradeTooLowException : public std::exception
+	{
+		public :
+			virtual const char *what() const throw();
+	};
+
+	class NotSignedException : public std::exception
 	{
 		public :
 			virtual const char *what() const throw();

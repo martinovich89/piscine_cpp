@@ -56,7 +56,23 @@ int main(void)
 	PresidentialPardonForm	c42("SomeTarget");
 	PresidentialPardonForm	d42(c42);
 
-	JeanBCE.signForm(c42);
 	JeanAttali.signForm(d42);
+	JeanAttali.executeForm(c42);
+	JeanAttali.signForm(c42);
+	JeanAttali.executeForm(d42);
 
+	std::cout << std::endl;
+
+	JeanBCE.executeForm(c42);
+
+	std::cout << std::endl;
+
+	JeanBCE.executeForm(a27);
+	JeanBCE.signForm(a27);
+	JeanBCE.executeForm(a27);
+
+	std::cout << std::endl;
+
+	JeanBCE.signForm(b19);
+	JeanBCE.executeForm(b19);
 }

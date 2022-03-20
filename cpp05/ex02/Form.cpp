@@ -42,16 +42,10 @@ Form::Form(std::string name, int signGrade, int execGrade)
 
 void	Form::beSigned(Bureaucrat someBureaucrat)
 {
-	std::cout << someBureaucrat.getGrade() << " | " << _signGrade << std::endl;
 	if (someBureaucrat.getGrade() <= _signGrade)
 		_signed = 1;
 	else
 		throw Form::GradeTooLowException();
-}
-
-void	Form::execute(Bureaucrat const &executor)
-{
-	
 }
 
 const char *Form::GradeTooHighException::what() const throw()
@@ -62,6 +56,11 @@ const char *Form::GradeTooHighException::what() const throw()
 const char *Form::GradeTooLowException::what() const throw()
 {
 	return ("Grade too low (Form)");
+}
+
+const char *Form::NotSignedException::what() const throw()
+{
+	return ("Form not signed");
 }
 
 std::string	Form::getName() const

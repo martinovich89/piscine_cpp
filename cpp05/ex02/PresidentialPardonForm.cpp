@@ -11,11 +11,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other)
-:	Form(
-		other.getName(),
-		other.getSignGrade(),
-		other.getExecGrade()
-	),
+:	Form(other),
 	_target(other.getTarget())
 {
 }
@@ -32,9 +28,14 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form
 
 }
 
-void	PresidentialPardonForm::execute(Bureaucrat const &executor)
+void	PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	//Informe que la <target> a été pardonnée par Zaphod Beeblebrox.
+	if (!getSign())
+		throw NotSignedException();
+	if (executor.getGrade() > this->getExecGrade())
+		throw GradeTooLowException();
+	std::cout << _target << " has been forgiven by Zaphod Beeblebrox" << std::endl;
 }
 
 std::string		PresidentialPardonForm::getTarget() const
