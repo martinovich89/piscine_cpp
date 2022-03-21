@@ -80,6 +80,7 @@ int main(void)
 	try
 	{
 		error = someIntern.makeForm("wrong name", "nobody");
+		JeanReptilien.signForm(*error);
 	}
 	catch(const std::exception& e)
 	{
