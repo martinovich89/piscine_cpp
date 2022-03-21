@@ -52,30 +52,30 @@ int main(void)
 		a27 = someIntern.makeForm("shrubbery creation", "unknown");
 		b19 = someIntern.makeForm("robotomy request", "xXDarkSasuke98Xx");
 		c42 = someIntern.makeForm("presidential pardon", "SomeTarget");
-
-		JeanAttali.executeForm(*c42);
-		JeanAttali.signForm(*c42);
-		JeanAttali.executeForm(*c42);
-
-		std::cout << std::endl;
-
-		JeanBCE.executeForm(*c42);
-
-		std::cout << std::endl;
-
-		JeanBCE.executeForm(*a27);
-		JeanBCE.signForm(*a27);
-		JeanBCE.executeForm(*a27);
-
-		std::cout << std::endl;
-
-		JeanBCE.signForm(*b19);
-		JeanBCE.executeForm(*b19);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	
+	JeanAttali.executeForm(*c42);
+	JeanAttali.signForm(*c42);
+	JeanAttali.executeForm(*c42);
+
+	std::cout << std::endl;
+
+	JeanBCE.executeForm(*c42);
+
+	std::cout << std::endl;
+
+	JeanBCE.executeForm(*a27);
+	JeanBCE.signForm(*a27);
+	JeanBCE.executeForm(*a27);
+
+	std::cout << std::endl;
+
+	JeanBCE.signForm(*b19);
+	JeanBCE.executeForm(*b19);
 
 	try
 	{
@@ -86,7 +86,7 @@ int main(void)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	
+
 	delete a27;
 	delete b19;
 	delete c42;
