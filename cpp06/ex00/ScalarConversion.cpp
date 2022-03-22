@@ -98,7 +98,7 @@ const char* ScalarConversion::WrongUsageException::what() const throw()
 
 const char* ScalarConversion::WrongEntryException::what() const throw()
 {
-	return ("Invalid arg");
+	return ("Invalid argument");
 }
 
 double	ScalarConversion::getDouble() const

@@ -1,12 +1,12 @@
-NAME			=	scalarConversion
+NAME			=	serialization
 
-HEADERS			=	ScalarConversion.hpp
+HEADERS			=
 
 INC				=	-I./
 
 SRC_PATH		=	./
 
-SRCS			=	main.cpp ScalarConversion.cpp
+SRCS			=	main.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 

@@ -1,9 +1,7 @@
-#ifndef ScalarConversion_HPP
-# define ScalarConversion_HPP
+#pragma once
 
-# include <iostream>
-# include <stdexcept>
-# include <cmath>
+#include <iostream>
+#include <cmath>
 
 class ScalarConversion
 {
@@ -46,5 +44,3 @@ class ScalarConversion
 };
 
 std::ostream& operator<<(std::ostream &out, const ScalarConversion &toPrint);
-
-#endif

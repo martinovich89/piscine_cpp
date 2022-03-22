@@ -1,12 +1,12 @@
-NAME			=	scalarConversion
+NAME			=	identify
 
-HEADERS			=	ScalarConversion.hpp
+HEADERS			=	Base.class.hpp
 
 INC				=	-I./
 
 SRC_PATH		=	./
 
-SRCS			=	main.cpp ScalarConversion.cpp
+SRCS			=	main.cpp Base.class.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 
