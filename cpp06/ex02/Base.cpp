@@ -1,4 +1,4 @@
-#include "Base.class.hpp"
+#include "Base.hpp"
 
 Base::~Base()
 {

@@ -1,8 +1,8 @@
-#include "Base.class.hpp"
+#include "Base.hpp"
 #include <iostream>
 #include <cstdlib>
 
-Base*	randomize_class()
+Base*	generate()
 {
 	srand(time(NULL));
 	if (rand() % 3 == 0)
@@ -13,17 +13,17 @@ Base*	randomize_class()
 		return (new C());
 }
 
-void	identify_class(Base *p)
+void	identify(Base *toCast)
 {
-	if (dynamic_cast<A*>(p) != NULL)
+	if (dynamic_cast<A*>(toCast) != NULL)
 		std::cout << "A" << std::endl;
-	else if (dynamic_cast<B*>(p) != NULL)
+	else if (dynamic_cast<B*>(toCast) != NULL)
 		std::cout << "B" << std::endl;
-	else if (dynamic_cast<C*>(p) != NULL)
+	else if (dynamic_cast<C*>(toCast) != NULL)
 		std::cout << "C" << std::endl;
 }
 
-void	identify_class(Base &toCast)
+void	identify(Base &toCast)
 {
 	Base casted;
 	try
@@ -61,11 +61,11 @@ int		main(void)
 {
 	Base	*someClass;
 
-	someClass = randomize_class();
+	someClass = generate();
 	std::cout << "identify by pointer: ";
-	identify_class(someClass);
+	identify(someClass);
 	std::cout << "identify by reference: ";
-	identify_class(*someClass);
+	identify(*someClass);
 
 	delete someClass;
 

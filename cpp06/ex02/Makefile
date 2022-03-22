@@ -1,12 +1,12 @@
 NAME			=	identify
 
-HEADERS			=	Base.class.hpp
+HEADERS			=	Base.hpp
 
 INC				=	-I./
 
 SRC_PATH		=	./
 
-SRCS			=	main.cpp Base.class.cpp
+SRCS			=	main.cpp Base.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 
