@@ -1,18 +1,18 @@
-NAME			=	scalarTypeConversions
+NAME			=	Form
 
-HEADERS			=	scalarTypeConversions.hpp
+HEADERS			=	ScalarConversion.hpp
 
 INC				=	-I./
 
 SRC_PATH		=	./
 
-SRCS			=	main.cpp scalarTypeConversions.cpp
+SRCS			=	main.cpp ScalarConversion.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 
 CXX				=	c++
 
-CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
+CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-sanitize=address -g3
 
 all : $(NAME)
 
