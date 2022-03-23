@@ -7,6 +7,13 @@ class ScalarConversion
 {
 	private:
 
+		bool	_intOverflow;
+		bool	_floatOverflow;
+		bool	_doubleOverflow;
+		int		_type;
+		char	_charValue;
+		int		_intValue;
+		float	_floatValue;
 		double	_doubleValue;
 
 	public:
@@ -18,7 +25,7 @@ class ScalarConversion
 
 		double	getDouble() const;
 
-		void	fetchValue(const char *str);
+		void	fetchValue(const char *str, int type);
 		void	printChar() const;
 		void	printInt() const;
 		void	printFloat() const;

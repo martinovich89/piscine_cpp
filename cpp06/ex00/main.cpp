@@ -111,7 +111,7 @@ int main(int ac, char **av)
 			throw ScalarConversion::WrongUsageException();
 		int type = whichType(av[1]);
 		std::cout << type << std::endl;
-		ScalarConversion.fetchValue(av[1]);
+		ScalarConversion.fetchValue(av[1], type);
 		std::cout << ScalarConversion;
 	}
 	catch (std::exception& e)
