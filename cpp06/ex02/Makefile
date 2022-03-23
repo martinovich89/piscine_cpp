@@ -1,6 +1,6 @@
 NAME			=	identify
 
-HEADERS			=	Base.hpp
+HEADERS			=	Base.hpp A.hpp B.hpp C.hpp
 
 INC				=	-I./
 
