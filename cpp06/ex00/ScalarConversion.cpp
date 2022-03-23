@@ -180,7 +180,8 @@ void    ScalarConversion::printFloat(void) const
         std::cout << " impossible" << std::endl;
     else
     {
-		std::cout.precision(std::numeric_limits<float>::digits10);
+//		Uncomment to add precision, at some cost.
+//		std::cout.precision(std::numeric_limits<float>::digits10);
         std::cout << f;
         if (f < 1000000 && f > -1000000 && i == f)
             std::cout << ".0";
@@ -197,7 +198,8 @@ void    ScalarConversion::printDouble() const
         std::cout << " impossible" << std::endl;
     else
     {
-		std::cout.precision(std::numeric_limits<double>::digits10);
+//		Uncomment to add precion, at some cost.
+//		std::cout.precision(std::numeric_limits<double>::digits10);
         std::cout << d;
         if (d < 1000000 && d > -1000000 && i == d)
             std::cout << ".0";
