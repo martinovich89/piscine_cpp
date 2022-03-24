@@ -33,10 +33,39 @@ int main(void)
 			std::cout << "intArrayAssignment[" << i << "]	: " << intArrayAssignment[i] << std::endl;
 		}
 
-		intArray[4];
+		intArray[size];
 	}
 	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+
+	std::cout << std::endl;
+
+	try
+	{
+		unsigned size = 10;
+		Array<std::string> strArray(size);
+		Array<std::string> strArrayCopy(strArray);
+		Array<std::string> strArrayAssignment;
+		std::cout << "size of strArrayAssignment before copy assignment	: " << strArrayAssignment.size() << std::endl;
+		strArrayAssignment = strArrayCopy;
+		std::cout << "size of strArrayAssignment after copy assignment	: " << strArrayAssignment.size() << std::endl;
+
+		std::cout << std::endl;
+
+		for (unsigned i = 0; i < size; i++)
+		{
+			std::cout << "OG strArray[" << i << "]		: |" << strArray[i] << "|" << std::endl;
+			std::cout << "strArrayCopy[" << i << "]		: |" << strArrayCopy[i] << "|" << std::endl;
+			std::cout << "strArrayAssignment[" << i << "]	: |" << strArrayAssignment[i] << "|" << std::endl;
+		}
+
+		strArray[size];
+	}
+	catch(const std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	
 }
