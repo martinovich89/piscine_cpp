@@ -1,12 +1,12 @@
-NAME			=	iter
+NAME			=	array
 
-HEADERS			=	iter.hpp number.hpp print.hpp printeven.hpp
+HEADERS			=	Array.hpp
 
 INC				=	-I./
 
 SRC_PATH		=	./
 
-SRCS			=	main.cpp number.cpp
+SRCS			=	main.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 
