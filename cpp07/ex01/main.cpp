@@ -11,6 +11,7 @@ int main(void)
 	std::cout << "use of print() on array{1, 42, 19, 69, 7, 32} :" << std::endl;
 	iter(array, 6, print);
 	std::cout << std::endl;
+	
 	std::cout << "use of printeven() on array{1, 42, 19, 69, 7, 32} :" << std::endl;
 	iter(array, 6, printeven);
 	std::cout << std::endl;
