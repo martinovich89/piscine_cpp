@@ -50,70 +50,62 @@ ScalarConversion& ScalarConversion::operator=(const ScalarConversion &other)
 
 ScalarConversion::operator char() const
 {
-	if (_type == 1)
+	switch (_type)
 	{
-		return (static_cast<char>(_intValue));
+		case 1:
+			return (static_cast<char>(_intValue));
+		case 2:
+			return (static_cast<char>(_floatValue));
+		case 3:
+			return (static_cast<char>(_doubleValue));
+		default:
+			return (_charValue);
 	}
-	if (_type == 2)
-	{
-		return (static_cast<char>(_floatValue));
-	}
-	if (_type == 3)
-	{
-		return (static_cast<char>(_doubleValue));
-	}
-	return (_charValue);
 }
 
 ScalarConversion::operator int() const
 {
-	if (_type == 0)
+	switch (_type)
 	{
-		return (static_cast<int>(_charValue));
+		case 0:
+			return (static_cast<int>(_charValue));
+		case 2:
+			return (static_cast<int>(_floatValue));
+		case 3:
+			return (static_cast<int>(_doubleValue));
+		default:
+			return (_intValue);
 	}
-	if (_type == 2)
-	{
-		return (static_cast<int>(_floatValue));
-	}
-	if (_type == 3)
-	{
-		return (static_cast<int>(_doubleValue));
-	}
-	return (_intValue);
 }
 
 ScalarConversion::operator float() const
 {
-	if (_type == 0)
+	switch (_type)
 	{
-		return (static_cast<float>(_charValue));
+		case 0:
+			return (static_cast<float>(_charValue));
+		case 1:
+			return (static_cast<float>(_intValue));
+		case 3:
+			return (static_cast<float>(_doubleValue));
+		default:
+			return (_floatValue);
 	}
-	if (_type == 1)
-	{
-		return (static_cast<float>(_intValue));
-	}
-	if (_type == 3)
-	{
-		return (static_cast<float>(_doubleValue));
-	}
-	return (_floatValue);
 }
 
 ScalarConversion::operator double() const
 {
-	if (_type == 0)
+	switch (_type)
 	{
-		return (static_cast<double>(_charValue));
+		case 0:
+			return (static_cast<double>(_charValue));
+		case 1:
+			return (static_cast<double>(_intValue));
+		case 2:
+			return (static_cast<double>(_floatValue));
+		default:
+			return (_doubleValue);
 	}
-	if (_type == 1)
-	{
-		return (static_cast<double>(_intValue));
-	}
-	if (_type == 2)
-	{
-		return (static_cast<double>(_floatValue));
-	}
-	return (_doubleValue);
 }
 
 void    ScalarConversion::fetchValue(const char *str, int type)
