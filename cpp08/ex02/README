@@ -1,0 +1,4 @@
+I had to find a way to implement begin() and end() in my stack. These web pages gave me the solution :
+https://www.internalpointers.com/post/writing-custom-iterators-modern-cpp
+
+https://stackoverflow.com/questions/1259099/stdqueue-iteration
