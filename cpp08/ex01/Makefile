@@ -1,12 +1,12 @@
 NAME			=	span
 
-HEADERS			=	Span.hpp Utils.hpp
+HEADERS			=	Span.hpp
 
 INC				=	-I./
 
 SRC_PATH		=	./
 
-SRCS			=	main.cpp Span.cpp Utils.cpp
+SRCS			=	main.cpp Span.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 

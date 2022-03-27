@@ -1,7 +1,5 @@
 #pragma once
 
-#include <map>
-#include <algorithm>
 #include <list>
 #include <stack>
 #include <iostream>

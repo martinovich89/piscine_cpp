@@ -1,6 +1,6 @@
 NAME			=	stack
 
-HEADERS			=	Stack.hpp
+HEADERS			=	MutantStack.hpp
 
 INC				=	-I./
 
