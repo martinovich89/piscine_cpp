@@ -17,10 +17,10 @@ CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-sanitize=address -g3
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-		$(CXX) $(CXXFLAGS) $(SRCS) $(INC) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $(SRCS) -o $(NAME)
 
 %.o : %.cpp $(HEADERS) Makefile
-	$(CXX) $(CXXFLAGS) $(INC) -o $@ -c $<
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 clean :
 		$(RM) $(OBJS)

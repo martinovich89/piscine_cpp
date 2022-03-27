@@ -7,7 +7,6 @@ int main(void)
 		Span my_span(5);
 
 		my_span.addNumber(42);
-//		std::cout << my_span.longestSpan() << std::endl;
 		my_span.addNumber(1);
 		std::cout << my_span.longestSpan() << std::endl;
 		my_span.addNumber(3);
@@ -19,7 +18,7 @@ int main(void)
 		my_span.addNumber(99);
 		std::cout << my_span.longestSpan() << std::endl;
 		std::cout << my_span.shortestSpan() << std::endl;
-	//	my_span.addNumber(100);
+		my_span.addNumber(100);
 	}
 	catch(const std::exception& e)
 	{

@@ -1,5 +1,26 @@
 #include "MutantStack.hpp"
 
+template <class T>
+void const_iterator_test(const MutantStack<T> &cmstack)
+{
+	MutantStack<int>::citerator cit = cmstack.begin();
+	MutantStack<int>::criterator crit = cmstack.rbegin();
+
+	std::cout << "----->with const_iterator<-----" << std::endl;
+
+	for (; cit != cmstack.end(); cit++)
+	{
+		std::cout << *cit << std::endl;
+	}
+	
+	std::cout << "----->with const_reverse_iterator<-----" << std::endl;
+
+	for (; crit != cmstack.rend(); crit++)
+	{
+		std::cout << *crit << std::endl;
+	}
+}
+
 int main()
 {
 	std::cout << "=====>OG main with list<=====" << std::endl << std::endl;
@@ -54,6 +75,37 @@ int main()
 			++it;
 		}
 		std::stack<int> s(mstack);
-		return 0;
+	}
+
+	std::cout << std::endl << "=====> MY main.cpp <=====" << std::endl << std::endl;
+
+	{
+		MutantStack<int> mstack;
+
+		mstack.push(5);
+		mstack.push(17);
+		mstack.push(3);
+		mstack.push(5);
+		mstack.push(737);
+		mstack.push(0);
+
+		MutantStack<int>::iterator it = mstack.begin();
+		MutantStack<int>::riterator rit = mstack.rbegin();
+
+		std::cout << "----->with iterator<-----" << std::endl;
+
+		for (; it != mstack.end(); it++)
+		{
+			std::cout << *it << std::endl;
+		}
+
+		std::cout << "----->with reverse_iterator<-----" << std::endl;
+
+		for (; rit != mstack.rend(); rit++)
+		{
+			std::cout << *rit << std::endl;
+		}
+
+		const_iterator_test(mstack);
 	}
 }
