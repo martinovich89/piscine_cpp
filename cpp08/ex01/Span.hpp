@@ -28,7 +28,7 @@ class Span
 		template <class Iter>
 		void	addRange(Iter begin, Iter end)
 		{
-			if (static_cast<unsigned>(end - begin) <= static_cast<unsigned>(_N - _vec.size()))
+			if (static_cast<unsigned>(std::distance(begin, end)) <= static_cast<unsigned>(_N - _vec.size()))
 				_vec.insert(_vec.end(), begin, end);
 			else
 				throw(CantAddMoreElement());
