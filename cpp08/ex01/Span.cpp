@@ -37,14 +37,6 @@ void	Span::addNumber(const int n)
 		throw CantAddMoreElement();
 }
 
-void	Span::addRange(std::vector<int>::iterator start, std::vector<int>::iterator end)
-{
-	if (static_cast<unsigned>(end - start) <= static_cast<unsigned>(_N - _vec.size()))
-		_vec.insert(_vec.end(), start, end);
-	else
-		throw(CantAddMoreElement());
-}
-
 unsigned	Span::longestSpan(void)
 {
 	if (_vec.size() < 2)

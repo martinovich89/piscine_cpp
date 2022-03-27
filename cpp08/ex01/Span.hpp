@@ -22,9 +22,17 @@ class Span
 		Span(const unsigned N);
 
 		void		addNumber(const int n);
-		void		addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 		unsigned	longestSpan(void);
 		unsigned	shortestSpan(void);
+
+		template <class Iter>
+		void	addRange(Iter begin, Iter end)
+		{
+			if (static_cast<unsigned>(end - begin) <= static_cast<unsigned>(_N - _vec.size()))
+				_vec.insert(_vec.end(), begin, end);
+			else
+				throw(CantAddMoreElement());
+		}
 
 	class CantAddMoreElement : public std::exception
 	{
